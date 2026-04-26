@@ -4,7 +4,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores import Chroma
 
-DOCS_FOLDER = "./knowledge_base" 
+DOCS_FOLDER = "./Steve_Knowledge" 
 PERSIST_DIRECTORY = "./steve_jobs_db" 
 EMBEDDING_MODEL = "nomic-embed-text" 
 

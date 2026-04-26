@@ -1,0 +1,1 @@
+A very rough prototype of AI-Steve 2.0, a decent portion of this code is written by AI just to get a proof of concept working. Eventually I'll do a manual rewrite, and incorperate the current visuals from AI-Steve 1. 

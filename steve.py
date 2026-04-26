@@ -1,13 +1,13 @@
 from langchain_community.llms import Ollama
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores import Chroma
-from langchain_ollama import OllamaEmbeddings
+from langchain_ollama import RetrievalQA
 
 embeddings = OllamaEmbeddings(model="nomic-embed-text")
 vector_db = Chroma(persist_directory="./steve_jobs_db", embedding_function=embeddings)
 llm = Ollama(model="gemma3:12b")
 
-qa_chain = OllamaEmbeddings.from_chain_type(
+qa_chain = RetrievalQA.from_chain_type(
     llm,
     retriever=vector_db.as_retriever(),
     chain_type_kwargs={"prompt": "You are Steve Jobs. Use the following context to answer... [Insert full prompt from previous response]"}

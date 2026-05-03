@@ -2,8 +2,8 @@ import os
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.chat_models import ChatOllama
-from langchain_community.chains import ConversationalRetrievalChain
-from langchain_community.memory import ConversationBufferMemory
+from langchain-classic.chains import ConversationalRetrievalChain
+from langchain-classic.memory import ConversationBufferMemory
 
 PERSIST_DIRECTORY = "./steve_jobs_db" 
 EMBEDDING_MODEL = "nomic-embed-text" 

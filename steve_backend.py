@@ -127,7 +127,7 @@ class SteveBot:
 if __name__ == "__main__":
     import langchain
     from langchain_community.vectorstores import Chroma
-    from langchain_ollama import ollama # Or your specific provider
+    # from langchain_ollama import ollama # Or your specific provider
     # (Assuming you have your vectorstore loaded)
     
     # This is just a placeholder for your actual loaded vectorstore

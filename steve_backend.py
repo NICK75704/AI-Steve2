@@ -7,7 +7,7 @@ from langchain.memory import ConversationBufferMemory
 
 PERSIST_DIRECTORY = "./steve_jobs_db" 
 EMBEDDING_MODEL = "nomic-embed-text" 
-LLM_MODEL = "llama3"
+LLM_MODEL = "AI-Steve2"
 
 def start_chat():
     if not os.path.exists(PERSIST_DIRECTORY):

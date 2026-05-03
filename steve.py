@@ -5,7 +5,7 @@ from langchain_ollama import RetrievalQA
 
 embeddings = OllamaEmbeddings(model="nomic-embed-text")
 vector_db = Chroma(persist_directory="./steve_jobs_db", embedding_function=embeddings)
-llm = Ollama(model="gemma3:12b")
+llm = Ollama(model="AI-Steve:latest")
 
 qa_chain = RetrievalQA.from_chain_type(
     llm,

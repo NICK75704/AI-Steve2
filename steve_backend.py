@@ -1,9 +1,9 @@
 import os
-from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import OllamaEmbeddings
-from langchain_community.chat_models import ChatOllama
-from langchain_classic.chains import ConversationalRetrievalChain
-from langchain_classic.memory import ConversationBufferMemory
+# New updated imports
+from langchain_chroma import Chroma
+from langchain_ollama import OllamaEmbeddings, ChatOllama
+from langchain.chains import ConversationalRetrievalChain
+from langchain.memory import ConversationBufferMemory
 
 PERSIST_DIRECTORY = "./steve_jobs_db" 
 EMBEDDING_MODEL = "nomic-embed-text" 
@@ -16,6 +16,7 @@ def start_chat():
 
     print("Loading knowledge base...")
     
+    # Updated classes
     embeddings = OllamaEmbeddings(model=EMBEDDING_MODEL)
     vector_db = Chroma(
         persist_directory=PERSIST_DIRECTORY, 
@@ -30,11 +31,11 @@ def start_chat():
         output_key='answer'
     )
 
+    # Removed 'return_intermediate_steps' to fix the Pydantic ValidationError
     chain = ConversationalRetrievalChain.from_llm(
         llm=llm,
         retriever=vector_db.as_retriever(search_kwargs={"k": 3}),
-        memory=memory,
-        return_intermediate_steps=False
+        memory=memory
     )
 
     print("\n" + "="*50)
